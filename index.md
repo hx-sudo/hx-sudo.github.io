@@ -1,11 +1,13 @@
+## Hello, this is my site.
+
+Welcome to my personal blog
+
 ---
-layout: splash
-header:
-  overlay_color: "#667eea"
-  overlay_filter: 0.3
-  actions:
-    - label: "My GitHub"
-      url: "https://github.com/hx-sudo"
-    - label: "❤️ PP同学点击这里"
-      url: "/texiao.html"
+
+### 🔗 Quick Links
+
+[My GitHub](https://github.com/hx-sudo)
+
+[❤️ PP同学点击这里](texiao.html)
+
 ---
