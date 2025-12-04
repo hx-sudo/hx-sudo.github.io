@@ -1,52 +1,6 @@
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: pages-themes/cayman@v0.2.0
 title: HuXin
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 description: Welcome to my blog
 
-# Site Settings
-locale: "zh-CN"
-url: "https://hx-sudo.github.io"
-baseurl: ""
-repository: "hx-sudo/hx-sudo.github.io"
-
-# Build settings
-markdown: kramdown
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-
-author:
-  # name: "HuXin"
-  bio: "Welcome to my personal blog" # Note: Markdown is allowed
-  # location: "China"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/hx-sudo"
-    - label: "PP同学点击这里"
-      icon: "fas fa-fw fa-heart"
-      url: "/texiao.html"
-
+  - jekyll-remote-theme
