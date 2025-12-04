@@ -39,9 +39,9 @@ defaults:
       author_profile: true
 
 author:
-  name: "HuXin"
+  # name: "HuXin"
   bio: "Welcome to my personal blog" # Note: Markdown is allowed
-  location: "China"
+  # location: "China"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
