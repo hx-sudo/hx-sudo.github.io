@@ -1,4 +1,4 @@
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 title: HuXin
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 description: Welcome to my blog
@@ -11,20 +11,14 @@ defaults:
       author_profile: true
 
 author:
-  name: "Your Name"
-  bio: "I am an **amazing** person." # Note: Markdown is allowed
-  location: "Somewhere"
+  name: "HuXin"
+  bio: "Welcome to my personal blog" # Note: Markdown is allowed
+  location: "China"
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mmistakes"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hx-sudo"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/mmistakes"
     - label: "PP同学点击这里"
       icon: "fas fa-fw fa-heart"
-      url: "texiao.html"
+      url: "/texiao.html"
 
