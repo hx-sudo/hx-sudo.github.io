@@ -1,7 +1,17 @@
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll  # 本地开发使用
+remote_theme: mmistakes/minimal-mistakes  # GitHub Pages 部署使用
 title: HuXin
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 description: Welcome to my blog
+
+# 插件配置（GitHub Pages 必需）
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
 defaults:
   # _posts
   - scope:
