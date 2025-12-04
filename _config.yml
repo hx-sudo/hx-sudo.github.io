@@ -24,4 +24,7 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/mmistakes"
+    - label: "PP同学点击这里"
+      icon: "fas fa-fw fa-heart"
+      url: "texiao.html"
 
