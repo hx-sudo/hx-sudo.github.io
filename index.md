@@ -1,10 +1,24 @@
 ---
-layout: home
-author_profile: true
+layout: splash
+header:
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/header-bg.jpg
+  overlay_filter: 0.5
+excerpt: "Welcome to my personal blog"
 ---
 
-**Hello, this is my site.**
+# Hello, this is my site.
 
-[View My GitHub Profile](https://github.com/hx-sudo)
+<div style="text-align: center; margin-top: 30px;">
+  <a href="https://github.com/hx-sudo" class="btn btn--primary btn--large">View My GitHub Profile</a>
+  <br><br>
+  <a href="/texiao.html" class="btn btn--danger btn--large">❤️ PP同学点击这里</a>
+</div>
 
-[PP同学点击这里](/texiao.html)
+---
+
+## About Me
+
+**HuXin** | China 🇨🇳
+
+Developer | Blogger
