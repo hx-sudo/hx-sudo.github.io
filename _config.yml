@@ -14,12 +14,6 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-# 导航（顶部）
-header_pages:
-  - /about/
-  - /blog/
-
-
 # 顶部链接（右上角）与社交（用于 footer、作者卡）
 # author:
   bio: "致 PP 同学：欢迎来到我的小天地！"
