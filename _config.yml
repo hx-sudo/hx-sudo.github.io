@@ -22,15 +22,12 @@ header_pages:
 
 # 顶部链接（右上角）与社交（用于 footer、作者卡）
 author:
-  name: "HuXin"
+  # name: "HuXin"
   # avatar: "/assets/images/avatar.jpg" # 可替换成你的头像
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hx-sudo"
-    - label: "关于我"
-      icon: "fas fa-fw fa-user"
-      url: "/about/"
 
 footer:
   content: "© {{ site.time | date: '%Y' }} HuXin — 简约 · 时尚 · 大气"
