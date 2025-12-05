@@ -12,12 +12,5 @@ permalink: /
   </div>
 </header>
 
-<!-- 手动填充空白，让页面足够长 -->
-<br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br>
 
-
-<!-- 页脚直接写在内容最后 -->
-<footer class="site-footer--minimal" role="contentinfo">
-  <small>Hosted on GitHub Pages — Theme by orderedlist</small>
-</footer>
+<br><br><br>
