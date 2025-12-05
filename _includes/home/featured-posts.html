@@ -1,0 +1,9 @@
+<div class="home-featured-posts">
+{% for post in site.posts limit:6 %}
+<article class="post">
+  <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate:160 }}</p>{% endif %}
+  <div class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</div>
+</article>
+{% endfor %}
+</div>
