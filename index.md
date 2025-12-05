@@ -2,12 +2,12 @@
 layout: home
 title: "HuXin"
 permalink: /
-# 极简风格首页：左上站点名 + 简短副标题，保持大量留白
+# 极简风格首页：移除重复的站点标题，保留简介与文章列表
 ---
 
 <header class="site-header--minimal" role="banner">
   <div class="site-brand">
-    <h1 class="site-title">HuXin</h1>
+    <!-- 不再放 H1，避免与主题自动输出的站点标题重复 -->
     <p class="site-subtitle">Welcome to my blog</p>
     <p class="site-link"><a href="https://github.com/hx-sudo" target="_blank">View My GitHub Profile</a></p>
   </div>
