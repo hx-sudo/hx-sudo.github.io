@@ -1,10 +1,13 @@
-# theme: minimal-mistakes-jekyll  # 本地开发使用
-remote_theme: mmistakes/minimal-mistakes  # GitHub Pages 部署使用
+# 基于 minimal-mistakes 的简约时尚配置示例
+remote_theme: mmistakes/minimal-mistakes
 title: HuXin
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-description: Welcome to my blog
+description: 简约 · 时尚 · 大气 — HuXin 的博客
+minimal_mistakes_skin: "air" # 推荐 "air" 或 "default" 或 "mint"
+# site-wide settings
+baseurl: "" # 若部署到 user.github.io 留空
+url: "https://hx-sudo.github.io"
 
-# 插件配置（GitHub Pages 必需）
+# 插件（GitHub Pages 支持的插件）
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -12,46 +15,57 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-# 页面默认设置
-# defaults:
-#   # _posts
-#   - scope:
-#       path: ""
-#       type: posts
-#     values:
-#       layout: single
-#       author_profile: true
-#       read_time: true
-#       comments: true
-#       share: true
-#       related: true
-#   # _pages
-#   - scope:
-#       path: ""
-#       type: pages
-#     values:
-#       layout: single
-#       author_profile: true
+# 导航（顶部）
+header_pages:
+  - /about/
+  - /blog/
 
+# 顶部链接（右上角）与社交（用于 footer、作者卡）
 author:
-  # name: "HuXin"
-  # bio: "I am an **amazing** person." # Note: Markdown is allowed
-  # location: "Somewhere"
+  name: "HuXin"
+  # avatar: "/assets/images/avatar.jpg" # 可替换成你的头像
   links:
-    # - label: "GitHub"
-    #   icon: "fab fa-fw fa-github"
-    #   url: "https://github.com/hx-sudo"
-    # - label: "Email"
-    #   icon: "fas fa-fw fa-envelope-square"
-    #   url: "mailto:your-email@example.com"
-    # - label: "Website"
-    #   icon: "fas fa-fw fa-link"
-    #   url: "https://hx-sudo.github.io"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/hx-sudo"
+    - label: "关于我"
+      icon: "fas fa-fw fa-user"
+      url: "/about/"
 
-# 自定义内容区域配置
 footer:
+  content: "© {{ site.time | date: '%Y' }} HuXin — 简约 · 时尚 · 大气"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hx-sudo"
 
+# 默认页面设置（使文章和页面风格一致）
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
+
+# 其它（可选）增强体验的设置
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Include 自定义 css
+include:
+  - assets/css/custom.scss
+
+# 方便本地开发（可选）
+markdown: kramdown
+highlighter: rouge

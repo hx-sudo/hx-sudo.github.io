@@ -1,0 +1,121 @@
+/* Minimal style tuned to the provided screenshot:
+   - White background, left-aligned bold blue site title
+   - Small centered top text
+   - Large whitespace, subtle muted subtitle/link
+   Save to assets/css/custom.scss and ensure it's included in _config.yml
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --accent-blue: #1976d2; /* 贴近示例的蓝色（可调整） */
+  --text-color: #111827;
+  --muted: #6b7280;
+  --page-max-width: 1100px;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  background: #ffffff;
+  margin: 0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* 页眉与品牌（左上） */
+.site-header--minimal{
+  position: relative;
+  padding: 36px 24px 12px 40px; /* 左上留白为主 */
+  min-height: 120px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* 左上品牌区 */
+.site-brand {
+  max-width: 420px;
+}
+.site-title{
+  margin: 0;
+  color: var(--accent-blue);
+  font-weight: 700;
+  font-size: 1.4rem; /* 与示例接近 */
+  letter-spacing: -0.02em;
+}
+.site-subtitle{
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.site-link{
+  margin-top: 10px;
+}
+.site-link a{
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* 顶部中间的小字（水平居中） */
+.site-topcenter{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 42px; /* 可微调使其垂直居中效果与示例一致 */
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* 主体：保持大量白色空间并把文章区靠上显示 */
+.site-main--minimal{
+  max-width: var(--page-max-width);
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+/* 文章区标题简洁 */
+.home-cards h2{
+  margin: 0 0 18px 0;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* 文章卡片：极简边框、圆角与悬浮效果（可选） */
+.home-cards .post {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid rgba(17,24,39,0.04);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.home-cards .post:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+
+/* 页脚：小字、淡色 */
+.site-footer--minimal{
+  text-align: left;
+  padding: 36px 40px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* 响应式：小屏时顶部中间文字改为不绝对定位 */
+@media (max-width: 720px){
+  .site-topcenter{
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .site-header--minimal{
+    padding: 20px;
+  }
+  .site-brand{
+    text-align: left;
+  }
+}
