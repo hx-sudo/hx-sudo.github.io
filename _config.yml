@@ -27,13 +27,13 @@ sidebar_custom_text: |
   </div>
 
 # 顶部链接（右上角）与社交（用于 footer、作者卡）
-author:
-  # name: "HuXin"
+# author:
+  bio: "致 PP 同学：欢迎来到我的小天地！"
   # avatar: "/assets/images/avatar.jpg" # 可替换成你的头像
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/hx-sudo"
+  # links:
+  #   - label: "GitHub"
+  #     icon: "fab fa-fw fa-github"
+  #     url: "https://github.com/hx-sudo"
 
 footer:
   content: "© {{ site.time | date: '%Y' }} HuXin — 简约 · 时尚 · 大气"
