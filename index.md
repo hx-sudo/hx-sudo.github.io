@@ -14,7 +14,7 @@ permalink: /
 
 <!-- 手动填充空白，让页面足够长 -->
 <br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 
 
 <!-- 页脚直接写在内容最后 -->
