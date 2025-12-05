@@ -17,6 +17,7 @@ plugins:
 # 顶部链接（右上角）与社交（用于 footer、作者卡）
 author:
   bio: "致 PP 同学：欢迎来到我的小天地！"
+  following: false
   # avatar: "/assets/images/avatar.jpg" # 可替换成你的头像
   # links:
   #   - label: "GitHub"
