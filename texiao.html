@@ -65,23 +65,25 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             text-align: center;
-            width: 100%;
+            width: 90%; /* 限制宽度防止溢出 */
+            max-width: 600px;
             pointer-events: none;
         }
 
         .main-text {
-            font-size: clamp(3rem, 7vw, 6rem);
+            font-size: clamp(2.5rem, 6vw, 5rem); /* 缩小最小字号适配手机 */
             font-weight: 400;
             /* 极光渐变字 */
             background: linear-gradient(135deg, #fff 0%, #e0c3fc 50%, #8ec5fc 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em; /* 减小字间距 */
             filter: drop-shadow(0 0 20px rgba(142, 197, 252, 0.5));
             opacity: 0;
             transform: translateY(30px) scale(0.9);
             transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            word-wrap: break-word; /* 防止长单词溢出 */
         }
 
         .main-text.visible {
