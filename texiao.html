@@ -58,6 +58,7 @@
             mix-blend-mode: screen; 
         }
 
+
         .text-container {
             position: absolute;
             top: 50%;
@@ -65,13 +66,13 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             text-align: center;
-            width: 90%; /* 限制宽度防止溢出 */
-            max-width: 600px;
+            width: 90%; /* 限制宽度 */
+            max-width: 800px;
             pointer-events: none;
         }
 
         .main-text {
-            font-size: clamp(2.5rem, 6vw, 5rem); /* 缩小最小字号适配手机 */
+            font-size: clamp(2.5rem, 6vw, 5rem); /* 缩小最小字号，防止手机溢出 */
             font-weight: 400;
             /* 极光渐变字 */
             background: linear-gradient(135deg, #fff 0%, #e0c3fc 50%, #8ec5fc 100%);
@@ -83,7 +84,7 @@
             opacity: 0;
             transform: translateY(30px) scale(0.9);
             transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-            word-wrap: break-word; /* 防止长单词溢出 */
+            line-height: 1.2;
         }
 
         .main-text.visible {
@@ -92,7 +93,7 @@
         }
 
         .sub-text {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
             color: rgba(255, 255, 255, 0.8);
             letter-spacing: 0.2em;
             margin-top: 1.5rem;
@@ -113,8 +114,8 @@
             width: 100%;
             text-align: center;
             color: rgba(255, 255, 255, 0.4);
-            font-size: 0.9rem;
-            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
             z-index: 10;
             animation: pulseHint 3s infinite;
             pointer-events: none;
@@ -128,10 +129,10 @@
         .corner-mark {
             position: absolute;
             bottom: 30px;
-            right: 40px;
-            font-size: 0.8rem;
+            right: 30px;
+            font-size: 0.7rem;
             color: rgba(255,255,255,0.3);
-            letter-spacing: 0.2em;
+            letter-spacing: 0.1em;
             z-index: 10;
         }
     </style>
@@ -139,6 +140,8 @@
 </head>
 <body>
     <div class="aurora-bg"></div>
+    
+
     <canvas id="canvas"></canvas>
     
     <div class="text-container">
@@ -400,8 +403,11 @@
         function setEffectTargets() {
             if (currentEffect === 'heart') {
                 const arr = [];
-                const scale = Math.min(width, height) * 0.015; 
+                // 适配逻辑：移动端缩小爱心比例，防止被截断
+                const isMobile = width < 600;
+                const scale = Math.min(width, height) * (isMobile ? 0.008 : 0.012); 
                 const cx = width / 2; const cy = height / 2;
+                
                 for (let t = 0; t < Math.PI * 2; t += 0.05) {
                     const x = 16 * Math.pow(Math.sin(t), 3);
                     const y = -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
