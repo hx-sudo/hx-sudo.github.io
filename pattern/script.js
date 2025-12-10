@@ -31,18 +31,61 @@ const COLORS = {
 
 // 调整画布大小
 function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    // 获取设备像素比，防止移动端模糊，但限制最大为 2 以免性能问题
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    
+    // 设置显示大小（CSS像素）
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    
+    // 设置缓冲区大小（物理像素）
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    
+    // 缩放上下文，使得绘图操作可以使用 CSS 像素坐标
+    ctx.scale(dpr, dpr);
+    
+    // 更新全局宽高变量为 CSS 像素值，供绘图逻辑使用
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    // 强制重绘背景
+    const currentS = scenes[currentSceneIndex];
+    if (currentS && currentS.type === 'light') {
+        ctx.fillStyle = COLORS.white;
+    } else {
+        ctx.fillStyle = COLORS.bg;
+    }
+    ctx.fillRect(0, 0, width, height);
 }
 
 window.addEventListener('resize', resize);
-resize();
+// resize(); // 移除这里的调用，因为它在 scenes 定义之前，会导致错误
 
 // 交互
 window.addEventListener('keydown', (e) => {
     if (e.code === 'Space') isPaused = !isPaused;
 });
-window.addEventListener('click', nextScene);
+
+// 统一的点击处理函数，兼容 PC 和移动端
+function handleClick(e) {
+    // 如果是移动端触摸触发的 click，浏览器通常会处理，但为了保险起见和消除延迟：
+    // 我们主要依赖 click 事件来切换场景，因为它在 PC 和移动端都通用
+    nextScene();
+}
+
+window.addEventListener('click', handleClick);
+// 添加 touchstart 监听以优化移动端响应速度，阻止默认缩放，但不阻止点击
+window.addEventListener('touchstart', (e) => {
+    // 仅当单指触摸时阻止默认行为（如缩放、滚动），并触发场景切换
+    if(e.touches.length === 1) {
+        // 记录触摸时间或位置如果需要更复杂的逻辑，这里直接切换
+        // 注意：这里不调用 nextScene()，因为 click 也会触发，避免双重触发
+        // 或者调用 nextScene() 并阻止 click
+        e.preventDefault(); 
+        nextScene();
+    }
+}, {passive: false});
 
 // ==========================================
 // 辅助函数
@@ -741,4 +784,5 @@ function nextScene() {
 }
 
 // 启动
+resize(); // 确保在启动前调用一次 resize，此时 scenes 已定义
 loop();

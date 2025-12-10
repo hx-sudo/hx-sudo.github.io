@@ -44,6 +44,23 @@ canvas {
     opacity: 0;
     transition: opacity 1s ease;
     mix-blend-mode: exclusion; /* 让文字与背景纹样融合 */
+    padding: 0 1rem;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    #scene-title {
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+    }
+    
+    .controls {
+        bottom: 40px; /* 避开 iPhone 底部横条 */
+        font-size: 0.7rem;
+        width: 90%;
+        line-height: 1.5;
+        opacity: 0.6;
+    }
 }
 
 .title-fade.visible {
