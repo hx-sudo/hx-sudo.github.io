@@ -1,7 +1,7 @@
 # 基于 minimal-mistakes 的简约时尚配置示例
 remote_theme: mmistakes/minimal-mistakes
-title: HuXin
-description: 简约 · 时尚 · 大气 — HuXin 的博客
+title: LEON
+description: 简约 · 时尚 · 大气
 minimal_mistakes_skin: "air" # 推荐 "air" 或 "default" 或 "mint"
 # site-wide settings
 baseurl: "" # 若部署到 user.github.io 留空
@@ -26,7 +26,7 @@ author:
   #     url: "https://github.com/hx-sudo"
 
 footer:
-  content: "© {{ site.time | date: '%Y' }} HuXin — 简约 · 时尚 · 大气"
+  content: "© {{ site.time | date: '%Y' }} 简约 · 时尚 · 大气"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
