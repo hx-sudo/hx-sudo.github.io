@@ -13,6 +13,9 @@ permalink: /
   <div style="margin-top: 20px;">
     <a href="/pattern/index.html" class="btn btn--info btn--large">🎨 欣赏中国传统纹样</a>
   </div>
+  <div style="margin-top: 20px;">
+    <a href="/" class="btn btn--success btn--large">🎄 圣诞魔法树</a>
+  </div>
 </header>
 
 
